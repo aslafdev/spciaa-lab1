@@ -17,3 +17,5 @@
 
 # python
 __pycache__/
+
+*.data

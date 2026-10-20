@@ -21,11 +21,12 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         liblapack-dev \
         libboost-all-dev \
         llvm-dev \
-        libmumps-dev
+        libmumps-dev \
+        gnuplot-nox
 
 ENV CMAKE_GENERATOR=Ninja
 
-RUN --mount=type=bind,source=scripts/install-dependencies.sh,target=scripts/install-dependencies.sh,z \
+RUN --mount=type=bind,source=scripts/install-dependencies.sh,target=scripts/install-dependencies.sh \
     scripts/install-dependencies.sh /deps-build /deps
 
 COPY . .
